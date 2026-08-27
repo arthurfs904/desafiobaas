@@ -29,9 +29,9 @@ export default function LoginPage() {
     try {
       await entrar(email, senha);
       router.push("/dashboard");
-    } catch {
-      // 🐛 BUG 01 — catch vazio: o erro é silenciado.
-      // O usuário não sabe o que aconteceu. Adicione: setErro("E-mail ou senha inválidos.")
+    } catch (err) {
+  setErro("E-mail ou senha inválidos.");
+
     } finally {
       setCarregando(false);
     }
